@@ -1,0 +1,29 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Wohin hochgeladene Bilder gespeichert werden
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: "de"
+
+collections:
+  - name: "projekte"
+    label: "Projekte"
+    description: "Hier pflegt Philip die Projekte der Startseite."
+    files:
+      - name: "projektliste"
+        label: "Projektliste"
+        file: "projekte.json"
+        fields:
+          - label: "Projekte"
+            name: "projekte"
+            widget: "list"
+            label_singular: "Projekt"
+            summary: "{{fields.titel}} ({{fields.jahr}})"
+            fields:
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Beschreibung / Kategorie", name: "meta", widget: "string", hint: "z. B. Reisefilm · Island" }
+              - { label: "Jahr", name: "jahr", widget: "string" }
+              - { label: "Bild", name: "bild", widget: "image" }

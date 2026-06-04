@@ -1,0 +1,140 @@
+{
+  "projekte": [
+    {
+      "slug": "die-finals-2023",
+      "titel": "Die Finals 2023",
+      "meta": "Sport-Highlightfilm · Color Grading",
+      "jahr": "2023",
+      "bild": "images/uploads/die-finals-2023.jpg",
+      "galerie": [
+        "images/uploads/die-finals-2023/01.jpg",
+        "images/uploads/die-finals-2023/02.jpg",
+        "images/uploads/die-finals-2023/03.jpg",
+        "images/uploads/die-finals-2023/04.jpg"
+      ],
+      "kategorie": "foto"
+    },
+    {
+      "slug": "aldiana-club-resorts",
+      "titel": "Aldiana Club Resorts",
+      "meta": "Markenfilm · Color Grading",
+      "jahr": "",
+      "bild": "images/uploads/aldiana-club-resorts.jpg",
+      "galerie": [
+        "images/uploads/aldiana-club-resorts/01.jpg",
+        "images/uploads/aldiana-club-resorts/02.jpg",
+        "images/uploads/aldiana-club-resorts/03.jpg",
+        "images/uploads/aldiana-club-resorts/04.jpg",
+        "images/uploads/aldiana-club-resorts/05.jpg",
+        "images/uploads/aldiana-club-resorts/06.jpg",
+        "images/uploads/aldiana-club-resorts/07.jpg",
+        "images/uploads/aldiana-club-resorts/08.jpg",
+        "images/uploads/aldiana-club-resorts/09.jpg",
+        "images/uploads/aldiana-club-resorts/10.jpg",
+        "images/uploads/aldiana-club-resorts/11.jpg",
+        "images/uploads/aldiana-club-resorts/12.jpg",
+        "images/uploads/aldiana-club-resorts/13.jpg",
+        "images/uploads/aldiana-club-resorts/14.jpg",
+        "images/uploads/aldiana-club-resorts/15.jpg",
+        "images/uploads/aldiana-club-resorts/16.jpg",
+        "images/uploads/aldiana-club-resorts/17.jpg",
+        "images/uploads/aldiana-club-resorts/18.jpg",
+        "images/uploads/aldiana-club-resorts/19.jpg",
+        "images/uploads/aldiana-club-resorts/20.jpg",
+        "images/uploads/aldiana-club-resorts/21.jpg",
+        "images/uploads/aldiana-club-resorts/22.jpg",
+        "images/uploads/aldiana-club-resorts/23.jpg",
+        "images/uploads/aldiana-club-resorts/24.jpg",
+        "images/uploads/aldiana-club-resorts/25.jpg",
+        "images/uploads/aldiana-club-resorts/26.jpg"
+      ],
+      "kategorie": "foto"
+    },
+    {
+      "slug": "agatha-is-dead",
+      "titel": "Agatha Is Dead — Kind Regards",
+      "meta": "Musikvideo · DoP & Color Grading",
+      "jahr": "",
+      "bild": "images/uploads/agatha-is-dead.jpg",
+      "galerie": [
+        "images/uploads/agatha-is-dead/01.jpg",
+        "images/uploads/agatha-is-dead/02.jpg",
+        "images/uploads/agatha-is-dead/03.jpg",
+        "images/uploads/agatha-is-dead/04.jpg",
+        "images/uploads/agatha-is-dead/05.jpg",
+        "images/uploads/agatha-is-dead/06.jpg",
+        "images/uploads/agatha-is-dead/07.jpg",
+        "images/uploads/agatha-is-dead/08.jpg",
+        "images/uploads/agatha-is-dead/09.jpg",
+        "images/uploads/agatha-is-dead/10.jpg",
+        "images/uploads/agatha-is-dead/11.jpg",
+        "images/uploads/agatha-is-dead/12.jpg",
+        "images/uploads/agatha-is-dead/13.jpg"
+      ],
+      "kategorie": "foto"
+    },
+    {
+      "slug": "solarcity-berlin",
+      "titel": "Solarcity Berlin",
+      "meta": "Messefilm · Color Grading",
+      "jahr": "",
+      "bild": "images/uploads/solarcity-berlin.jpg",
+      "galerie": [
+        "images/uploads/solarcity-berlin/01.jpg",
+        "images/uploads/solarcity-berlin/02.jpg",
+        "images/uploads/solarcity-berlin/03.jpg",
+        "images/uploads/solarcity-berlin/04.jpg",
+        "images/uploads/solarcity-berlin/05.jpg",
+        "images/uploads/solarcity-berlin/06.jpg",
+        "images/uploads/solarcity-berlin/07.jpg",
+        "images/uploads/solarcity-berlin/08.jpg",
+        "images/uploads/solarcity-berlin/09.jpg",
+        "images/uploads/solarcity-berlin/10.jpg",
+        "images/uploads/solarcity-berlin/11.jpg"
+      ],
+      "kategorie": "foto"
+    },
+    {
+      "slug": "alltagsathleten",
+      "titel": "Alltagsathleten 1 & 2",
+      "meta": "Dokumentation · DoP",
+      "jahr": "",
+      "bild": "images/uploads/alltagsathleten.jpg",
+      "galerie": [
+        "images/uploads/alltagsathleten/01.jpg",
+        "images/uploads/alltagsathleten/02.jpg",
+        "images/uploads/alltagsathleten/03.jpg",
+        "images/uploads/alltagsathleten/04.jpg",
+        "images/uploads/alltagsathleten/05.jpg",
+        "images/uploads/alltagsathleten/06.jpg",
+        "images/uploads/alltagsathleten/07.jpg",
+        "images/uploads/alltagsathleten/08.jpg",
+        "images/uploads/alltagsathleten/09.jpg",
+        "images/uploads/alltagsathleten/10.jpg",
+        "images/uploads/alltagsathleten/11.jpg",
+        "images/uploads/alltagsathleten/12.jpg",
+        "images/uploads/alltagsathleten/13.jpg",
+        "images/uploads/alltagsathleten/14.jpg",
+        "images/uploads/alltagsathleten/15.jpg",
+        "images/uploads/alltagsathleten/16.jpg"
+      ],
+      "kategorie": "film"
+    },
+    {
+      "slug": "breazn",
+      "titel": "Breazn",
+      "meta": "Markenfilm · DoP & Color Grading",
+      "jahr": "",
+      "bild": "images/uploads/breazn.jpg",
+      "galerie": [
+        "images/uploads/breazn/01.jpg",
+        "images/uploads/breazn/02.jpg",
+        "images/uploads/breazn/03.jpg",
+        "images/uploads/breazn/04.jpg",
+        "images/uploads/breazn/05.jpg",
+        "images/uploads/breazn/06.jpg"
+      ],
+      "kategorie": "film"
+    }
+  ]
+}
