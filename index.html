@@ -289,6 +289,23 @@
   .svc p{color:var(--muted);font-size:15px;line-height:1.6}
   @media(max-width:900px){.services{grid-template-columns:1fr 1fr}}
   @media(max-width:600px){.services{grid-template-columns:1fr}.svc{min-height:auto;padding:36px 30px}}
+  footer a{transition:color .3s}
+  footer a:hover{color:var(--accent)}
+  .cookie-banner{position:fixed;left:20px;right:20px;bottom:20px;max-width:580px;margin:0 auto;z-index:300;
+    background:rgba(17,17,19,.97);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:8px;
+    padding:20px 24px;display:none;gap:16px 22px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+    box-shadow:0 24px 60px rgba(0,0,0,.55)}
+  .cookie-banner.show{display:flex}
+  .cookie-banner p{color:var(--muted);font-size:13px;line-height:1.6;margin:0;flex:1;min-width:230px}
+  .cookie-banner a{color:var(--accent)}
+  .cookie-btn{background:var(--accent);color:#0a0a0b;border:0;padding:11px 22px;border-radius:4px;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:.25s;white-space:nowrap}
+  .cookie-btn:hover{filter:brightness(1.12)}
+  .lang-toggle{position:relative;z-index:121;background:none;border:0;cursor:pointer;font-family:inherit;font-size:13px;letter-spacing:.1em;display:flex;gap:7px;align-items:center;margin-left:30px;padding:6px 0}
+  .lang-toggle .sep{color:var(--muted)}
+  .lang-toggle span[data-l]{color:var(--muted);transition:color .3s}
+  .lang-toggle span[data-l].active{color:var(--accent)}
+  @media(max-width:900px){.lang-toggle{margin-left:auto;margin-right:16px}}
 </style>
 </head>
 <body>
@@ -298,13 +315,16 @@
     <a href="#top" class="brand">Philip <b>Neugebauer</b><span>.</span></a>
     <nav>
       <ul class="menu" id="menu">
-        <li><a href="#work">Work</a></li>
-        <li><a href="#ueber">Über mich</a></li>
-        <li><a href="#leistungen">Leistungen</a></li>
-        <li><a href="#projekte">Projekte</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="#work" data-i18n="nav_work">Work</a></li>
+        <li><a href="#ueber" data-i18n="nav_about">Über mich</a></li>
+        <li><a href="#leistungen" data-i18n="nav_services">Leistungen</a></li>
+        <li><a href="#projekte" data-i18n="nav_projects">Projekte</a></li>
+        <li><a href="#kontakt" data-i18n="nav_contact">Kontakt</a></li>
       </ul>
     </nav>
+    <button class="lang-toggle" id="langToggle" aria-label="Sprache / Language">
+      <span data-l="de">DE</span><span class="sep">/</span><span data-l="en">EN</span>
+    </button>
     <button class="burger" id="burger" aria-label="Menü">
       <span></span><span></span><span></span>
     </button>
@@ -322,8 +342,8 @@
   </div>
   <div class="wrap hero-inner">
     <span class="eyebrow">Director of Photography &amp; Colorist</span>
-    <h1 class="serif">Bilder, die<br><em>bleiben.</em></h1>
-    <p>Ich erzähle Geschichten in Licht und Bewegung — von intimen Portraits bis zu cinematischen Filmproduktionen.</p>
+    <h1 class="serif" data-i18n="hero_h1">Bilder, die<br><em>bleiben.</em></h1>
+    <p data-i18n="hero_p">Ich erzähle Geschichten in Licht und Bewegung — von intimen Portraits bis zu cinematischen Filmproduktionen.</p>
   </div>
   <a href="#work" class="scroll-cue" aria-label="Zu Work scrollen">Scroll<i></i></a>
 </section>
@@ -332,20 +352,20 @@
 <section id="work" class="wrap">
   <div class="sec-head reveal">
     <div>
-      <span class="eyebrow">Ausgewählte Arbeiten</span>
+      <span class="eyebrow" data-i18n="work_eyebrow">Ausgewählte Arbeiten</span>
       <h2 class="serif">Work</h2>
     </div>
-    <p>Eine Auswahl aus Foto- und Filmprojekten der letzten Jahre — Portrait, Reportage, Landschaft und Bewegtbild.</p>
+    <p data-i18n="work_p">Eine Auswahl aus Foto- und Filmprojekten der letzten Jahre — Portrait, Reportage, Landschaft und Bewegtbild.</p>
   </div>
 
   <div class="work-grid">
     <div class="tile c7 t-wide reveal">
       <div class="tile-media" data-px="30"><img loading="lazy" decoding="async" src="images/uploads/work-band-videos.jpg" alt="Band-Videodreh im Studio – Philip Neugebauer"></div>
-      <div class="cap"><small>Showreel</small><span>Band - Videos</span></div>
+      <div class="cap"><small>Showreel</small><span data-i18n="cap_band">Band - Videos</span></div>
     </div>
     <div class="tile c5 t-wide reveal">
-      <div class="tile-media" data-px="30"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?q=80&w=1974&auto=format&fit=crop" alt="Portrait im Gegenlicht"></div>
-      <div class="cap"><small>Portrait</small><span>Stille Momente</span></div>
+      <div class="tile-media" data-px="30"><img loading="lazy" decoding="async" src="images/uploads/work-innotrans-2023.jpg" alt="InnoTrans 2023 Messegelände aus der Luft – Philip Neugebauer"></div>
+      <div class="cap"><small>Commercials</small><span>Innotrans 2023</span></div>
     </div>
     <div class="tile c4 t-tall reveal">
       <div class="tile-media" data-px="30"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1503095396549-807759245b35?q=80&w=1974&auto=format&fit=crop" alt="Strasse in der Stadt"></div>
@@ -357,18 +377,18 @@
     </div>
     <div class="tile c4 t-tall reveal">
       <div class="tile-media" data-px="30"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2074&auto=format&fit=crop" alt="Berge im Nebel"></div>
-      <div class="cap"><small>Landschaft</small><span>Horizonte</span></div>
+      <div class="cap"><small data-i18n="cap_land_s">Landschaft</small><span data-i18n="cap_land_t">Horizonte</span></div>
     </div>
     <div class="tile c8 t-wide reveal">
       <div class="tile-media" data-px="30"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2059&auto=format&fit=crop" alt="Kinosaal Licht"></div>
-      <div class="cap"><small>Filmproduktion</small><span>Kammerspiel</span></div>
+      <div class="cap"><small data-i18n="cap_film_s">Filmproduktion</small><span data-i18n="cap_film_t">Kammerspiel</span></div>
     </div>
     <div class="tile c4 t-wide reveal">
       <div class="tile-media" data-px="30"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2070&auto=format&fit=crop" alt="Nebliger Wald"></div>
-      <div class="cap"><small>Doku</small><span>Wald</span></div>
+      <div class="cap"><small data-i18n="cap_doku_s">Doku</small><span data-i18n="cap_doku_t">Wald</span></div>
     </div>
   </div>
-  <a href="#ueber" class="section-cue" aria-label="Weiter zu Über mich">Über mich<i></i></a>
+  <a href="#ueber" class="section-cue" data-i18n="cue_about" aria-label="Weiter zu Über mich">Über mich<i></i></a>
 
 </section>
 
@@ -376,8 +396,8 @@
 <section id="ueber" class="wrap">
   <div class="sec-head reveal">
     <div>
-      <span class="eyebrow">Persönlich</span>
-      <h2 class="serif">Über mich</h2>
+      <span class="eyebrow" data-i18n="about_eyebrow">Persönlich</span>
+      <h2 class="serif" data-i18n="about_h2">Über mich</h2>
     </div>
   </div>
   <div class="about">
@@ -386,22 +406,22 @@
     </div>
     <div class="about-text reveal">
       <h2 class="serif">Director of Photography<br>&amp; Colorist.</h2>
-      <p>Ich bin Philip Neugebauer, 29 Jahre jung und leidenschaftlicher Director of Photography und Colorist. Seit über 12 Jahren arbeite ich im Film- und Medienbereich und begleite Produktionen von der ersten Idee bis zum finalen Bild — in dieser Zeit durfte ich zahlreiche spannende Projekte für renommierte Marken realisieren.</p>
-      <p>Mein Schwerpunkt liegt auf hochwertigem Bilddesign, professionellem Color Grading und der technischen Umsetzung unterschiedlichster Videoformate. Dabei bringe ich eine hohe Flexibilität mit — sowohl im Studio als auch weltweit unterwegs.</p>
-      <p>Gerade in dynamischen Produktionen bewahre ich Ruhe und behalte den Überblick. Ich stelle mich schnell auf neue Situationen ein und finde auch in herausfordernden Momenten kreative, effiziente Lösungen, um jedes Projekt visuell auf den Punkt zu bringen.</p>
+      <p data-i18n="about_p1">Ich bin Philip Neugebauer, 29 Jahre jung und leidenschaftlicher Director of Photography und Colorist. Seit über 12 Jahren arbeite ich im Film- und Medienbereich und begleite Produktionen von der ersten Idee bis zum finalen Bild — in dieser Zeit durfte ich zahlreiche spannende Projekte für renommierte Marken realisieren.</p>
+      <p data-i18n="about_p2">Mein Schwerpunkt liegt auf hochwertigem Bilddesign, professionellem Color Grading und der technischen Umsetzung unterschiedlichster Videoformate. Dabei bringe ich eine hohe Flexibilität mit — sowohl im Studio als auch weltweit unterwegs.</p>
+      <p data-i18n="about_p3">Gerade in dynamischen Produktionen bewahre ich Ruhe und behalte den Überblick. Ich stelle mich schnell auf neue Situationen ein und finde auch in herausfordernden Momenten kreative, effiziente Lösungen, um jedes Projekt visuell auf den Punkt zu bringen.</p>
       <div class="stats">
-        <div class="stat"><b>12+</b><small>Jahre Erfahrung</small></div>
+        <div class="stat"><b>12+</b><small data-i18n="stat_years">Jahre Erfahrung</small></div>
         <div class="stat"><b>DoP</b><small>&amp; Colorist</small></div>
-        <div class="stat"><b>Weltweit</b><small>Studio &amp; on location</small></div>
+        <div class="stat"><b data-i18n="stat_ww">Weltweit</b><small>Studio &amp; on location</small></div>
       </div>
     </div>
   </div>
 
   <div class="tech reveal">
-    <span class="eyebrow">Technisches Profil</span>
+    <span class="eyebrow" data-i18n="tech_eyebrow">Technisches Profil</span>
     <div class="tech-grid">
       <div class="tech-col">
-        <h4>Kameraerfahrung</h4>
+        <h4 data-i18n="tech_cam">Kameraerfahrung</h4>
         <p>Arri · RED (eigenes RED Gemini 5K) · Blackmagic · Sony · Canon · Super8</p>
       </div>
       <div class="tech-col">
@@ -410,11 +430,11 @@
       </div>
       <div class="tech-col">
         <h4>Key Skills</h4>
-        <p>Film Print Emulationen (Super8 / 16mm) · Farbkorrektur · VFX Grading · Lookentwicklung</p>
+        <p data-i18n="tech_skills">Film Print Emulationen (Super8 / 16mm) · Farbkorrektur · VFX Grading · Lookentwicklung</p>
       </div>
     </div>
   </div>
-  <a href="#leistungen" class="section-cue" aria-label="Weiter zu Leistungen">Leistungen<i></i></a>
+  <a href="#leistungen" class="section-cue" data-i18n="cue_services" aria-label="Weiter zu Leistungen">Leistungen<i></i></a>
 
 </section>
 
@@ -422,44 +442,44 @@
 <section id="leistungen" class="wrap">
   <div class="sec-head reveal">
     <div>
-      <span class="eyebrow">Leistungen</span>
-      <h2 class="serif">Was ich biete</h2>
+      <span class="eyebrow" data-i18n="svc_eyebrow">Leistungen</span>
+      <h2 class="serif" data-i18n="svc_h2">Was ich biete</h2>
     </div>
-    <p>Von der ersten Bildidee bis zum finalen Grading — Gestaltung, Umsetzung und Beratung aus einer Hand.</p>
+    <p data-i18n="svc_intro">Von der ersten Bildidee bis zum finalen Grading — Gestaltung, Umsetzung und Beratung aus einer Hand.</p>
   </div>
   <div class="services reveal">
       <div class="svc">
         <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.2-1.8A1 1 0 0 1 9 4.7h6a1 1 0 0 1 .83.5L17 7h2.5A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.8" r="3.2"/></svg></span>
         <h3 class="serif">Cinematography</h3>
-        <p>Bildgestaltung für Film, Werbung und Corporate-Produktionen</p>
+        <p data-i18n="svc1">Bildgestaltung für Film, Werbung und Corporate-Produktionen</p>
       </div>
       <div class="svc">
         <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.9-.9 1.9-1.9 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.1 0-.9.8-1.6 1.7-1.6H16a5 5 0 0 0 5-5c0-3.9-4-7.2-9-7.2z"/><circle cx="7.6" cy="11.2" r=".9"/><circle cx="10.4" cy="7.8" r=".9"/><circle cx="14" cy="7.6" r=".9"/><circle cx="16.6" cy="10.6" r=".9"/></svg></span>
         <h3 class="serif">Color Grading</h3>
-        <p>Professionelles Colorgrading für Film und Foto im Look deiner Marke</p>
+        <p data-i18n="svc2">Professionelles Colorgrading für Film und Foto im Look deiner Marke</p>
       </div>
       <div class="svc">
         <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 6.2S10 4.7 4.2 4.7V18c5.8 0 7.8 1.4 7.8 1.4S14 18 19.8 18V4.7C14 4.7 12 6.2 12 6.2z"/><path d="M12 6.2v13.2"/></svg></span>
         <h3 class="serif">Editorial</h3>
-        <p>Kreative Bildsprache für Magazine, Lookbooks und Kampagnen</p>
+        <p data-i18n="svc3">Kreative Bildsprache für Magazine, Lookbooks und Kampagnen</p>
       </div>
       <div class="svc">
         <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="3.4"/><path d="M5.2 20c0-3.5 3-6 6.8-6s6.8 2.5 6.8 6"/></svg></span>
         <h3 class="serif">Portrait & People</h3>
-        <p>Authentische Charakterportraits für Personal Branding und mehr</p>
+        <p data-i18n="svc4">Authentische Charakterportraits für Personal Branding und mehr</p>
       </div>
       <div class="svc">
         <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="5.2" width="16" height="15.3" rx="1.6"/><path d="M4 9.6h16M8 3.2v3.8M16 3.2v3.8"/></svg></span>
         <h3 class="serif">Events & Reportage</h3>
-        <p>Authentische Bildberichterstattung von Events und Projekten</p>
+        <p data-i18n="svc5">Authentische Bildberichterstattung von Events und Projekten</p>
       </div>
       <div class="svc">
         <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9.3 18.2h5.4M10.3 21h3.4"/><path d="M12 3a6 6 0 0 0-3.8 10.6c.7.6 1 1.3 1 2.4h5.6c0-1.1.3-1.8 1-2.4A6 6 0 0 0 12 3z"/></svg></span>
-        <h3 class="serif">Beratung & Konzept</h3>
-        <p>Strategische Bildberatung und Visual Direction für dein Projekt</p>
+        <h3 class="serif" data-i18n="svc6h">Beratung & Konzept</h3>
+        <p data-i18n="svc6">Strategische Bildberatung und Visual Direction für dein Projekt</p>
       </div>
   </div>
-  <a href="#projekte" class="section-cue" aria-label="Weiter zu Projekte">Projekte<i></i></a>
+  <a href="#projekte" class="section-cue" data-i18n="cue_projects" aria-label="Weiter zu Projekte">Projekte<i></i></a>
 </section>
 
 <!-- PROJECTS -->
@@ -467,32 +487,32 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <div>
-        <span class="eyebrow">Fallstudien</span>
-        <h2 class="serif">Projekte</h2>
+        <span class="eyebrow" data-i18n="proj_eyebrow">Fallstudien</span>
+        <h2 class="serif" data-i18n="proj_h2">Projekte</h2>
       </div>
-      <p>Ausgewählte Auftragsarbeiten und freie Serien — von der ersten Idee bis zum fertigen Schnitt.</p>
+      <p data-i18n="proj_p">Ausgewählte Auftragsarbeiten und freie Serien — von der ersten Idee bis zum fertigen Schnitt.</p>
     </div>
 
     <div class="proj reveal" id="proj-list"></div>
   </div>
-    <a href="#kontakt" class="section-cue" aria-label="Weiter zu Kontakt">Kontakt<i></i></a>
+    <a href="#kontakt" class="section-cue" data-i18n="cue_contact" aria-label="Weiter zu Kontakt">Kontakt<i></i></a>
   
 </section>
 
 <!-- CONTACT -->
 <section id="kontakt" class="wrap">
   <div class="reveal">
-    <span class="eyebrow">Kontakt</span>
-    <div class="big serif">Lass uns etwas<br><a href="mailto:hallo@philip-neugebauer.com">Schönes schaffen.</a></div>
-    <p style="color:var(--muted);max-width:560px;margin:0 auto;">Erzähl mir von deinem Projekt — ob Portrait, Reportage oder Film. Ich melde mich innerhalb von 48&nbsp;Stunden.</p>
+    <span class="eyebrow" data-i18n="contact_eyebrow">Kontakt</span>
+    <div class="big serif" data-i18n="contact_big">Lass uns etwas<br><a href="mailto:hallo@philip-neugebauer.com">Schönes schaffen.</a></div>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto;" data-i18n="contact_p">Erzähl mir von deinem Projekt — ob Portrait, Reportage oder Film. Ich melde mich innerhalb von 48&nbsp;Stunden.</p>
 
     <div class="contact-meta">
       <div>
-        <h4>E-Mail</h4>
+        <h4 data-i18n="contact_email">E-Mail</h4>
         <a href="mailto:hallo@philip-neugebauer.com">hallo@philip-neugebauer.com</a>
       </div>
       <div>
-        <h4>Telefon</h4>
+        <h4 data-i18n="contact_phone">Telefon</h4>
         <a href="tel:+4917684881531">+49 176 84881531</a>
       </div>
       <div>
@@ -508,7 +528,7 @@
       <a href="#" target="_blank" rel="noopener">Behance</a>
     </div>
   </div>
-  <a href="#top" class="section-cue up" aria-label="Nach oben">Nach oben<i></i></a>
+  <a href="#top" class="section-cue up" data-i18n="cue_top" aria-label="Nach oben">Nach oben<i></i></a>
 
 </section>
 
@@ -529,7 +549,7 @@
 <footer>
   <div class="wrap foot">
     <span>© 2026 Philip Neugebauer — Director of Photography &amp; Colorist</span>
-    <span>Impressum · Datenschutz</span>
+    <span data-i18n="footer_legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
   </div>
 </footer>
 
@@ -577,7 +597,7 @@
   })();
 
   // Projekte aus projekte.json laden (wird ueber das CMS gepflegt)
-  const FALLBACK={"projekte": [{"slug": "die-finals-2023", "titel": "Die Finals 2023", "meta": "Sport-Highlightfilm · Color Grading", "jahr": "2023", "bild": "images/uploads/die-finals-2023.jpg", "galerie": ["images/uploads/die-finals-2023/01.jpg", "images/uploads/die-finals-2023/02.jpg", "images/uploads/die-finals-2023/03.jpg", "images/uploads/die-finals-2023/04.jpg"], "kategorie": "foto"}, {"slug": "aldiana-club-resorts", "titel": "Aldiana Club Resorts", "meta": "Markenfilm · Color Grading", "jahr": "", "bild": "images/uploads/aldiana-club-resorts.jpg", "galerie": ["images/uploads/aldiana-club-resorts/01.jpg", "images/uploads/aldiana-club-resorts/02.jpg", "images/uploads/aldiana-club-resorts/03.jpg", "images/uploads/aldiana-club-resorts/04.jpg", "images/uploads/aldiana-club-resorts/05.jpg", "images/uploads/aldiana-club-resorts/06.jpg", "images/uploads/aldiana-club-resorts/07.jpg", "images/uploads/aldiana-club-resorts/08.jpg", "images/uploads/aldiana-club-resorts/09.jpg", "images/uploads/aldiana-club-resorts/10.jpg", "images/uploads/aldiana-club-resorts/11.jpg", "images/uploads/aldiana-club-resorts/12.jpg", "images/uploads/aldiana-club-resorts/13.jpg", "images/uploads/aldiana-club-resorts/14.jpg", "images/uploads/aldiana-club-resorts/15.jpg", "images/uploads/aldiana-club-resorts/16.jpg", "images/uploads/aldiana-club-resorts/17.jpg", "images/uploads/aldiana-club-resorts/18.jpg", "images/uploads/aldiana-club-resorts/19.jpg", "images/uploads/aldiana-club-resorts/20.jpg", "images/uploads/aldiana-club-resorts/21.jpg", "images/uploads/aldiana-club-resorts/22.jpg", "images/uploads/aldiana-club-resorts/23.jpg", "images/uploads/aldiana-club-resorts/24.jpg", "images/uploads/aldiana-club-resorts/25.jpg", "images/uploads/aldiana-club-resorts/26.jpg"], "kategorie": "foto"}, {"slug": "agatha-is-dead", "titel": "Agatha Is Dead — Kind Regards", "meta": "Musikvideo · DoP & Color Grading", "jahr": "", "bild": "images/uploads/agatha-is-dead.jpg", "galerie": ["images/uploads/agatha-is-dead/01.jpg", "images/uploads/agatha-is-dead/02.jpg", "images/uploads/agatha-is-dead/03.jpg", "images/uploads/agatha-is-dead/04.jpg", "images/uploads/agatha-is-dead/05.jpg", "images/uploads/agatha-is-dead/06.jpg", "images/uploads/agatha-is-dead/07.jpg", "images/uploads/agatha-is-dead/08.jpg", "images/uploads/agatha-is-dead/09.jpg", "images/uploads/agatha-is-dead/10.jpg", "images/uploads/agatha-is-dead/11.jpg", "images/uploads/agatha-is-dead/12.jpg", "images/uploads/agatha-is-dead/13.jpg"], "kategorie": "foto"}, {"slug": "solarcity-berlin", "titel": "Solarcity Berlin", "meta": "Messefilm · Color Grading", "jahr": "", "bild": "images/uploads/solarcity-berlin.jpg", "galerie": ["images/uploads/solarcity-berlin/01.jpg", "images/uploads/solarcity-berlin/02.jpg", "images/uploads/solarcity-berlin/03.jpg", "images/uploads/solarcity-berlin/04.jpg", "images/uploads/solarcity-berlin/05.jpg", "images/uploads/solarcity-berlin/06.jpg", "images/uploads/solarcity-berlin/07.jpg", "images/uploads/solarcity-berlin/08.jpg", "images/uploads/solarcity-berlin/09.jpg", "images/uploads/solarcity-berlin/10.jpg", "images/uploads/solarcity-berlin/11.jpg"], "kategorie": "foto"}, {"slug": "alltagsathleten", "titel": "Alltagsathleten 1 & 2", "meta": "Dokumentation · DoP", "jahr": "", "bild": "images/uploads/alltagsathleten.jpg", "galerie": ["images/uploads/alltagsathleten/01.jpg", "images/uploads/alltagsathleten/02.jpg", "images/uploads/alltagsathleten/03.jpg", "images/uploads/alltagsathleten/04.jpg", "images/uploads/alltagsathleten/05.jpg", "images/uploads/alltagsathleten/06.jpg", "images/uploads/alltagsathleten/07.jpg", "images/uploads/alltagsathleten/08.jpg", "images/uploads/alltagsathleten/09.jpg", "images/uploads/alltagsathleten/10.jpg", "images/uploads/alltagsathleten/11.jpg", "images/uploads/alltagsathleten/12.jpg", "images/uploads/alltagsathleten/13.jpg", "images/uploads/alltagsathleten/14.jpg", "images/uploads/alltagsathleten/15.jpg", "images/uploads/alltagsathleten/16.jpg"], "kategorie": "film"}, {"slug": "breazn", "titel": "Breazn", "meta": "Markenfilm · DoP & Color Grading", "jahr": "", "bild": "images/uploads/breazn.jpg", "galerie": ["images/uploads/breazn/01.jpg", "images/uploads/breazn/02.jpg", "images/uploads/breazn/03.jpg", "images/uploads/breazn/04.jpg", "images/uploads/breazn/05.jpg", "images/uploads/breazn/06.jpg"], "kategorie": "film"}]};
+  const FALLBACK={"projekte": [{"slug": "die-finals-2023", "titel": "Die Finals 2023", "meta": "Sport-Highlightfilm · Color Grading", "jahr": "2023", "bild": "images/uploads/die-finals-2023.jpg", "galerie": ["images/uploads/die-finals-2023/01.jpg", "images/uploads/die-finals-2023/02.jpg", "images/uploads/die-finals-2023/03.jpg", "images/uploads/die-finals-2023/04.jpg"], "kategorie": "film"}, {"slug": "aldiana-club-resorts", "titel": "Aldiana Club Resorts", "meta": "Markenfilm · Color Grading", "jahr": "", "bild": "images/uploads/aldiana-club-resorts.jpg", "galerie": ["images/uploads/aldiana-club-resorts/01.jpg", "images/uploads/aldiana-club-resorts/02.jpg", "images/uploads/aldiana-club-resorts/03.jpg", "images/uploads/aldiana-club-resorts/04.jpg", "images/uploads/aldiana-club-resorts/05.jpg", "images/uploads/aldiana-club-resorts/06.jpg", "images/uploads/aldiana-club-resorts/07.jpg", "images/uploads/aldiana-club-resorts/08.jpg", "images/uploads/aldiana-club-resorts/09.jpg", "images/uploads/aldiana-club-resorts/10.jpg", "images/uploads/aldiana-club-resorts/11.jpg", "images/uploads/aldiana-club-resorts/12.jpg", "images/uploads/aldiana-club-resorts/13.jpg", "images/uploads/aldiana-club-resorts/14.jpg", "images/uploads/aldiana-club-resorts/15.jpg", "images/uploads/aldiana-club-resorts/16.jpg", "images/uploads/aldiana-club-resorts/17.jpg", "images/uploads/aldiana-club-resorts/18.jpg", "images/uploads/aldiana-club-resorts/19.jpg", "images/uploads/aldiana-club-resorts/20.jpg", "images/uploads/aldiana-club-resorts/21.jpg", "images/uploads/aldiana-club-resorts/22.jpg", "images/uploads/aldiana-club-resorts/23.jpg", "images/uploads/aldiana-club-resorts/24.jpg", "images/uploads/aldiana-club-resorts/25.jpg", "images/uploads/aldiana-club-resorts/26.jpg"], "kategorie": "film"}, {"slug": "agatha-is-dead", "titel": "Agatha Is Dead — Kind Regards", "meta": "Musikvideo · DoP & Color Grading", "jahr": "", "bild": "images/uploads/agatha-is-dead.jpg", "galerie": ["images/uploads/agatha-is-dead/01.jpg", "images/uploads/agatha-is-dead/02.jpg", "images/uploads/agatha-is-dead/03.jpg", "images/uploads/agatha-is-dead/04.jpg", "images/uploads/agatha-is-dead/05.jpg", "images/uploads/agatha-is-dead/06.jpg", "images/uploads/agatha-is-dead/07.jpg", "images/uploads/agatha-is-dead/08.jpg", "images/uploads/agatha-is-dead/09.jpg", "images/uploads/agatha-is-dead/10.jpg", "images/uploads/agatha-is-dead/11.jpg", "images/uploads/agatha-is-dead/12.jpg", "images/uploads/agatha-is-dead/13.jpg"], "kategorie": "film"}, {"slug": "solarcity-berlin", "titel": "Solarcity Berlin", "meta": "Messefilm · Color Grading", "jahr": "", "bild": "images/uploads/solarcity-berlin.jpg", "galerie": ["images/uploads/solarcity-berlin/01.jpg", "images/uploads/solarcity-berlin/02.jpg", "images/uploads/solarcity-berlin/03.jpg", "images/uploads/solarcity-berlin/04.jpg", "images/uploads/solarcity-berlin/05.jpg", "images/uploads/solarcity-berlin/06.jpg", "images/uploads/solarcity-berlin/07.jpg", "images/uploads/solarcity-berlin/08.jpg", "images/uploads/solarcity-berlin/09.jpg", "images/uploads/solarcity-berlin/10.jpg", "images/uploads/solarcity-berlin/11.jpg"], "kategorie": "film"}, {"slug": "alltagsathleten", "titel": "Alltagsathleten 1 & 2", "meta": "Dokumentation · DoP", "jahr": "", "bild": "images/uploads/alltagsathleten.jpg", "galerie": ["images/uploads/alltagsathleten/01.jpg", "images/uploads/alltagsathleten/02.jpg", "images/uploads/alltagsathleten/03.jpg", "images/uploads/alltagsathleten/04.jpg", "images/uploads/alltagsathleten/05.jpg", "images/uploads/alltagsathleten/06.jpg", "images/uploads/alltagsathleten/07.jpg", "images/uploads/alltagsathleten/08.jpg", "images/uploads/alltagsathleten/09.jpg", "images/uploads/alltagsathleten/10.jpg", "images/uploads/alltagsathleten/11.jpg", "images/uploads/alltagsathleten/12.jpg", "images/uploads/alltagsathleten/13.jpg", "images/uploads/alltagsathleten/14.jpg", "images/uploads/alltagsathleten/15.jpg", "images/uploads/alltagsathleten/16.jpg"], "kategorie": "film"}, {"slug": "breazn", "titel": "Breazn", "meta": "Markenfilm · DoP & Color Grading", "jahr": "", "bild": "images/uploads/breazn.jpg", "galerie": ["images/uploads/breazn/01.jpg", "images/uploads/breazn/02.jpg", "images/uploads/breazn/03.jpg", "images/uploads/breazn/04.jpg", "images/uploads/breazn/05.jpg", "images/uploads/breazn/06.jpg"], "kategorie": "film"}]};
   let PROJEKTE=[];
   function renderProjekte(data){
     const list=document.getElementById('proj-list');
@@ -588,14 +608,14 @@
     GROUPS.forEach(([key,label])=>{
       const items=PROJEKTE.map((p,i)=>[p,i]).filter(pair=>((pair[0].kategorie||'film')===key));
       if(!items.length)return;
-      html+='<h3 class="proj-group serif">'+label+'</h3><div class="proj-set">';
+      html+='<h3 class="proj-group serif">'+(CUR_LANG==='en'?(label==='Foto'?'Photo':label):label)+'</h3><div class="proj-set">';
       items.forEach((pair,n)=>{
         const p=pair[0], i=pair[1];
         html+=`
         <div class="proj-row" data-i="${i}" role="button" tabindex="0">
           <span class="p-num">${String(n+1).padStart(2,'0')}</span>
           <span class="p-title serif">${p.titel||''}</span>
-          <span class="p-meta">${p.meta||''}</span>
+          <span class="p-meta">${tMeta(p.meta)}</span>
           <span class="p-year">${p.jahr||''}</span>
           <div class="thumb"><img src="${p.bild||''}" alt=""></div>
         </div>`;
@@ -613,7 +633,7 @@
   }
   function openGallery(i){
     const p=PROJEKTE[i]; if(!p)return;
-    document.getElementById('g-meta').textContent=p.meta||'';
+    document.getElementById('g-meta').textContent=tMeta(p.meta);
     document.getElementById('g-title').textContent=p.titel||'';
     document.getElementById('g-year').textContent=p.jahr||'';
     const imgs=(p.galerie&&p.galerie.length)?p.galerie:[p.bild];
@@ -660,6 +680,44 @@
       });
     },{rootMargin:'-45% 0px -50% 0px',threshold:0});
     sections.forEach(sec=>spy.observe(sec));
+  })();
+</script>
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie-Hinweis">
+  <p data-i18n="cookie_p">Diese Website verwendet ausschließlich technisch notwendige Cookies, um ihre Funktion sicherzustellen. Details in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+  <button id="cookie-accept" class="cookie-btn" data-i18n="cookie_btn">Verstanden</button>
+</div>
+<script>
+  (function(){
+    var k='cookie-ok-philip', b=document.getElementById('cookie-banner');
+    if(!b)return;
+    try{ if(!localStorage.getItem(k)) b.classList.add('show'); }catch(e){ b.classList.add('show'); }
+    var btn=document.getElementById('cookie-accept');
+    if(btn)btn.addEventListener('click',function(){ try{localStorage.setItem(k,'1')}catch(e){} b.classList.remove('show'); });
+  })();
+</script>
+<script>
+  var T={de:{"nav_work": "Work", "nav_about": "Über mich", "nav_services": "Leistungen", "nav_projects": "Projekte", "nav_contact": "Kontakt", "hero_h1": "Bilder, die<br><em>bleiben.</em>", "hero_p": "Ich erzähle Geschichten in Licht und Bewegung — von intimen Portraits bis zu cinematischen Filmproduktionen.", "work_eyebrow": "Ausgewählte Arbeiten", "work_p": "Eine Auswahl aus Foto- und Filmprojekten der letzten Jahre — Portrait, Reportage, Landschaft und Bewegtbild.", "cap_band": "Band - Videos", "cap_land_s": "Landschaft", "cap_land_t": "Horizonte", "cap_film_s": "Filmproduktion", "cap_film_t": "Kammerspiel", "cap_doku_s": "Doku", "cap_doku_t": "Wald", "cue_about": "Über mich<i></i>", "about_eyebrow": "Persönlich", "about_h2": "Über mich", "about_p1": "Ich bin Philip Neugebauer, 29 Jahre jung und leidenschaftlicher Director of Photography und Colorist. Seit über 12 Jahren arbeite ich im Film- und Medienbereich und begleite Produktionen von der ersten Idee bis zum finalen Bild — in dieser Zeit durfte ich zahlreiche spannende Projekte für renommierte Marken realisieren.", "about_p2": "Mein Schwerpunkt liegt auf hochwertigem Bilddesign, professionellem Color Grading und der technischen Umsetzung unterschiedlichster Videoformate. Dabei bringe ich eine hohe Flexibilität mit — sowohl im Studio als auch weltweit unterwegs.", "about_p3": "Gerade in dynamischen Produktionen bewahre ich Ruhe und behalte den Überblick. Ich stelle mich schnell auf neue Situationen ein und finde auch in herausfordernden Momenten kreative, effiziente Lösungen, um jedes Projekt visuell auf den Punkt zu bringen.", "stat_years": "Jahre Erfahrung", "stat_ww": "Weltweit", "tech_eyebrow": "Technisches Profil", "tech_cam": "Kameraerfahrung", "tech_skills": "Film Print Emulationen (Super8 / 16mm) · Farbkorrektur · VFX Grading · Lookentwicklung", "cue_services": "Leistungen<i></i>", "svc_eyebrow": "Leistungen", "svc_h2": "Was ich biete", "svc_intro": "Von der ersten Bildidee bis zum finalen Grading — Gestaltung, Umsetzung und Beratung aus einer Hand.", "svc1": "Bildgestaltung für Film, Werbung und Corporate-Produktionen", "svc2": "Professionelles Colorgrading für Film und Foto im Look deiner Marke", "svc3": "Kreative Bildsprache für Magazine, Lookbooks und Kampagnen", "svc4": "Authentische Charakterportraits für Personal Branding und mehr", "svc5": "Authentische Bildberichterstattung von Events und Projekten", "svc6h": "Beratung & Konzept", "svc6": "Strategische Bildberatung und Visual Direction für dein Projekt", "cue_projects": "Projekte<i></i>", "proj_eyebrow": "Fallstudien", "proj_h2": "Projekte", "proj_p": "Ausgewählte Auftragsarbeiten und freie Serien — von der ersten Idee bis zum fertigen Schnitt.", "cue_contact": "Kontakt<i></i>", "contact_eyebrow": "Kontakt", "contact_big": "Lass uns etwas<br><a href=\"mailto:hallo@philip-neugebauer.com\">Schönes schaffen.</a>", "contact_p": "Erzähl mir von deinem Projekt — ob Portrait, Reportage oder Film. Ich melde mich innerhalb von 48&nbsp;Stunden.", "contact_email": "E-Mail", "contact_phone": "Telefon", "cue_top": "Nach oben<i></i>", "footer_legal": "<a href=\"impressum.html\">Impressum</a> · <a href=\"datenschutz.html\">Datenschutz</a>", "cookie_p": "Diese Website verwendet ausschließlich technisch notwendige Cookies, um ihre Funktion sicherzustellen. Details in der <a href=\"datenschutz.html\">Datenschutzerklärung</a>.", "cookie_btn": "Verstanden"},en:{"nav_work": "Work", "nav_about": "About", "nav_services": "Services", "nav_projects": "Projects", "nav_contact": "Contact", "hero_h1": "Images that<br><em>endure.</em>", "hero_p": "I tell stories in light and motion — from intimate portraits to cinematic film productions.", "work_eyebrow": "Selected Work", "work_p": "A selection of photo and film projects from recent years — portrait, reportage, landscape and motion.", "cap_band": "Band Videos", "cap_land_s": "Landscape", "cap_land_t": "Horizons", "cap_film_s": "Film Production", "cap_film_t": "Chamber Piece", "cap_doku_s": "Documentary", "cap_doku_t": "Forest", "cue_about": "About<i></i>", "about_eyebrow": "Personal", "about_h2": "About", "about_p1": "I'm Philip Neugebauer, 29 years young and a passionate Director of Photography and Colorist. For over 12 years I've worked in film and media, accompanying productions from the first idea to the final image — and in that time I've had the privilege of realizing many exciting projects for renowned brands.", "about_p2": "My focus is on high-quality visual design, professional color grading and the technical realization of a wide range of video formats. I bring a high degree of flexibility — both in the studio and on location worldwide.", "about_p3": "Especially in dynamic productions I stay calm and keep the overview. I adapt quickly to new situations and find creative, efficient solutions even in challenging moments — to bring every project visually to the point.", "stat_years": "Years of experience", "stat_ww": "Worldwide", "tech_eyebrow": "Technical Profile", "tech_cam": "Camera experience", "tech_skills": "Film print emulation (Super8 / 16mm) · Color correction · VFX grading · Look development", "cue_services": "Services<i></i>", "svc_eyebrow": "Services", "svc_h2": "What I offer", "svc_intro": "From the first visual idea to the final grade — design, execution and consulting from one source.", "svc1": "Visual design for film, advertising and corporate productions", "svc2": "Professional color grading for film and photo in your brand's look", "svc3": "Creative imagery for magazines, lookbooks and campaigns", "svc4": "Authentic character portraits for personal branding and more", "svc5": "Authentic visual coverage of events and projects", "svc6h": "Consulting & Concept", "svc6": "Strategic visual consulting and direction for your project", "cue_projects": "Projects<i></i>", "proj_eyebrow": "Case Studies", "proj_h2": "Projects", "proj_p": "Selected commissioned work and free series — from the first idea to the final cut.", "cue_contact": "Contact<i></i>", "contact_eyebrow": "Contact", "contact_big": "Let's create something<br><a href=\"mailto:hallo@philip-neugebauer.com\">beautiful.</a>", "contact_p": "Tell me about your project — portrait, reportage or film. I'll get back to you within 48&nbsp;hours.", "contact_email": "Email", "contact_phone": "Phone", "cue_top": "Back to top<i></i>", "footer_legal": "<a href=\"impressum.html\">Imprint</a> · <a href=\"datenschutz.html\">Privacy</a>", "cookie_p": "This website only uses technically necessary cookies to ensure its functionality. Details in the <a href=\"datenschutz.html\">privacy policy</a>.", "cookie_btn": "Got it"}};
+  var META_EN={"Sport-Highlightfilm · Color Grading": "Sports highlight film · Color Grading", "Markenfilm · Color Grading": "Brand film · Color Grading", "Musikvideo · DoP & Color Grading": "Music video · DoP & Color Grading", "Messefilm · Color Grading": "Trade fair film · Color Grading", "Dokumentation · DoP": "Documentary · DoP", "Markenfilm · DoP & Color Grading": "Brand film · DoP & Color Grading"};
+  var CUR_LANG='de';
+  function tMeta(m){ return (CUR_LANG==='en' && META_EN[m]) ? META_EN[m] : (m||''); }
+  function applyLang(l){
+    CUR_LANG=l;
+    document.documentElement.lang=l;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k=el.getAttribute('data-i18n');
+      if(T[l] && T[l][k]!=null) el.innerHTML=T[l][k];
+    });
+    document.querySelectorAll('.lang-toggle span[data-l]').forEach(function(sp){
+      sp.classList.toggle('active', sp.getAttribute('data-l')===l);
+    });
+    try{localStorage.setItem('lang-philip',l)}catch(e){}
+    if(typeof PROJEKTE!=='undefined' && PROJEKTE && PROJEKTE.length) renderProjekte({projekte:PROJEKTE});
+  }
+  (function(){
+    var saved='de'; try{ saved=localStorage.getItem('lang-philip')||'de'; }catch(e){}
+    applyLang(saved);
+    var t=document.getElementById('langToggle');
+    if(t)t.addEventListener('click',function(){ applyLang(CUR_LANG==='de'?'en':'de'); });
   })();
 </script>
 </body>
