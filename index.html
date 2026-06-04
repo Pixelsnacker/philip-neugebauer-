@@ -26,7 +26,7 @@
 <meta name="twitter:title" content="Philip Neugebauer — Director of Photography & Colorist">
 <meta name="twitter:description" content="Philip Neugebauer — Director of Photography & Colorist aus Berlin. Hochwertiges Bilddesign, professionelles Color Grading (DaVinci Resolve) und cinematische Film- und Fotoproduktion für renommierte Marken.">
 <meta name="twitter:image" content="https://philip-neugebauer.netlify.app/images/uploads/die-finals-2023.jpg">
-<script type="application/ld+json">{"@context": "https://schema.org","@type": "Person","name": "Philip Neugebauer","jobTitle": "Director of Photography & Colorist","url": "https://philip-neugebauer.netlify.app/","image": "https://philip-neugebauer.netlify.app/philip-portrait.jpg","email": "hello@philipneugebauer.com","telephone": "+49 151 234 567 89","address": {"@type": "PostalAddress","streetAddress": "Oranienstraße 12","addressLocality": "Berlin","postalCode": "10999","addressCountry": "DE"},"knowsAbout": ["Cinematography","Color Grading","DaVinci Resolve","Film Print Emulation","VFX Grading","Look Development","Videoproduktion"],"worksFor": {"@type": "Organization","name": "Philip Neugebauer — Film & Fotografie"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "Person","name": "Philip Neugebauer","jobTitle": "Director of Photography & Colorist","url": "https://philip-neugebauer.netlify.app/","image": "https://philip-neugebauer.netlify.app/philip-portrait.jpg","email": "hallo@philip-neugebauer.com","telephone": "+49 151 234 567 89","address": {"@type": "PostalAddress","streetAddress": "Oranienstraße 12","addressLocality": "Berlin","postalCode": "10999","addressCountry": "DE"},"knowsAbout": ["Cinematography","Color Grading","DaVinci Resolve","Film Print Emulation","VFX Grading","Look Development","Videoproduktion"],"worksFor": {"@type": "Organization","name": "Philip Neugebauer — Film & Fotografie"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
@@ -274,6 +274,21 @@
   .proj-group{font-size:clamp(20px,2.6vw,30px);font-weight:300;color:var(--fg);letter-spacing:-.01em;margin:0 0 16px}
   .proj-set+.proj-group{margin-top:74px}
   .proj-set .proj-row:last-child{border-bottom:1px solid var(--line)}
+  /* ---------- LEISTUNGEN ---------- */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .svc{position:relative;background:var(--bg-soft);border:1px solid var(--line);padding:44px 38px;min-height:290px;
+    display:flex;flex-direction:column;transition:background .4s ease,transform .4s ease}
+  .svc::before{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:2px;background:var(--accent);
+    transform:scaleX(0);transform-origin:left;transition:transform .45s ease}
+  .svc:hover{background:#15151b;transform:translateY(-4px)}
+  .svc:hover::before{transform:scaleX(1)}
+  .svc-icon{display:block;width:40px;height:40px;color:var(--muted);margin-bottom:auto;transition:color .4s ease}
+  .svc-icon svg{width:100%;height:100%}
+  .svc:hover .svc-icon{color:var(--accent)}
+  .svc h3{font-size:25px;font-weight:300;margin:48px 0 14px;letter-spacing:-.01em}
+  .svc p{color:var(--muted);font-size:15px;line-height:1.6}
+  @media(max-width:900px){.services{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.services{grid-template-columns:1fr}.svc{min-height:auto;padding:36px 30px}}
 </style>
 </head>
 <body>
@@ -285,6 +300,7 @@
       <ul class="menu" id="menu">
         <li><a href="#work">Work</a></li>
         <li><a href="#ueber">Über mich</a></li>
+        <li><a href="#leistungen">Leistungen</a></li>
         <li><a href="#projekte">Projekte</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
@@ -398,8 +414,52 @@
       </div>
     </div>
   </div>
-  <a href="#projekte" class="section-cue" aria-label="Weiter zu Projekte">Projekte<i></i></a>
+  <a href="#leistungen" class="section-cue" aria-label="Weiter zu Leistungen">Leistungen<i></i></a>
 
+</section>
+
+<!-- LEISTUNGEN -->
+<section id="leistungen" class="wrap">
+  <div class="sec-head reveal">
+    <div>
+      <span class="eyebrow">Leistungen</span>
+      <h2 class="serif">Was ich biete</h2>
+    </div>
+    <p>Von der ersten Bildidee bis zum finalen Grading — Gestaltung, Umsetzung und Beratung aus einer Hand.</p>
+  </div>
+  <div class="services reveal">
+      <div class="svc">
+        <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.2-1.8A1 1 0 0 1 9 4.7h6a1 1 0 0 1 .83.5L17 7h2.5A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.8" r="3.2"/></svg></span>
+        <h3 class="serif">Cinematography</h3>
+        <p>Bildgestaltung für Film, Werbung und Corporate-Produktionen</p>
+      </div>
+      <div class="svc">
+        <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.9-.9 1.9-1.9 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.1 0-.9.8-1.6 1.7-1.6H16a5 5 0 0 0 5-5c0-3.9-4-7.2-9-7.2z"/><circle cx="7.6" cy="11.2" r=".9"/><circle cx="10.4" cy="7.8" r=".9"/><circle cx="14" cy="7.6" r=".9"/><circle cx="16.6" cy="10.6" r=".9"/></svg></span>
+        <h3 class="serif">Color Grading</h3>
+        <p>Professionelles Colorgrading für Film und Foto im Look deiner Marke</p>
+      </div>
+      <div class="svc">
+        <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 6.2S10 4.7 4.2 4.7V18c5.8 0 7.8 1.4 7.8 1.4S14 18 19.8 18V4.7C14 4.7 12 6.2 12 6.2z"/><path d="M12 6.2v13.2"/></svg></span>
+        <h3 class="serif">Editorial</h3>
+        <p>Kreative Bildsprache für Magazine, Lookbooks und Kampagnen</p>
+      </div>
+      <div class="svc">
+        <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="3.4"/><path d="M5.2 20c0-3.5 3-6 6.8-6s6.8 2.5 6.8 6"/></svg></span>
+        <h3 class="serif">Portrait & People</h3>
+        <p>Authentische Charakterportraits für Personal Branding und mehr</p>
+      </div>
+      <div class="svc">
+        <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="5.2" width="16" height="15.3" rx="1.6"/><path d="M4 9.6h16M8 3.2v3.8M16 3.2v3.8"/></svg></span>
+        <h3 class="serif">Events & Reportage</h3>
+        <p>Authentische Bildberichterstattung von Events und Projekten</p>
+      </div>
+      <div class="svc">
+        <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9.3 18.2h5.4M10.3 21h3.4"/><path d="M12 3a6 6 0 0 0-3.8 10.6c.7.6 1 1.3 1 2.4h5.6c0-1.1.3-1.8 1-2.4A6 6 0 0 0 12 3z"/></svg></span>
+        <h3 class="serif">Beratung & Konzept</h3>
+        <p>Strategische Bildberatung und Visual Direction für dein Projekt</p>
+      </div>
+  </div>
+  <a href="#projekte" class="section-cue" aria-label="Weiter zu Projekte">Projekte<i></i></a>
 </section>
 
 <!-- PROJECTS -->
@@ -423,13 +483,13 @@
 <section id="kontakt" class="wrap">
   <div class="reveal">
     <span class="eyebrow">Kontakt</span>
-    <div class="big serif">Lass uns etwas<br><a href="mailto:hello@philipneugebauer.com">Schönes schaffen.</a></div>
+    <div class="big serif">Lass uns etwas<br><a href="mailto:hallo@philip-neugebauer.com">Schönes schaffen.</a></div>
     <p style="color:var(--muted);max-width:560px;margin:0 auto;">Erzähl mir von deinem Projekt — ob Portrait, Reportage oder Film. Ich melde mich innerhalb von 48&nbsp;Stunden.</p>
 
     <div class="contact-meta">
       <div>
         <h4>E-Mail</h4>
-        <a href="mailto:hello@philipneugebauer.com">hello@philipneugebauer.com</a>
+        <a href="mailto:hallo@philip-neugebauer.com">hallo@philip-neugebauer.com</a>
       </div>
       <div>
         <h4>Telefon</h4>
