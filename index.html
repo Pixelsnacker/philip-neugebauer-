@@ -154,7 +154,7 @@
   .tile .cap span{font-size:20px;font-weight:400}
   .t-tall{aspect-ratio:3/4}
   .t-wide{aspect-ratio:16/10}
-  .c7{grid-column:span 7}.c5{grid-column:span 5}.c6{grid-column:span 6}.c4{grid-column:span 4}.c8{grid-column:span 8}
+  .c12{grid-column:1/-1}.c7{grid-column:span 7}.c5{grid-column:span 5}.c6{grid-column:span 6}.c4{grid-column:span 4}.c8{grid-column:span 8}
 
   /* ---------- ABOUT ---------- */
   .about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
@@ -306,6 +306,18 @@
   .lang-toggle span[data-l]{color:var(--muted);transition:color .3s}
   .lang-toggle span[data-l].active{color:var(--accent)}
   @media(max-width:900px){.lang-toggle{margin-left:auto;margin-right:16px}}
+  .about-more{margin-top:34px;background:none;border:1px solid var(--line);color:var(--fg);padding:13px 26px;border-radius:4px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:.3s;font-family:inherit}
+  .about-more:hover{border-color:var(--accent);color:var(--accent)}
+  .about-modal{position:fixed;inset:0;z-index:240;background:rgba(8,8,9,.985);backdrop-filter:blur(8px);overflow-y:auto;opacity:0;visibility:hidden;transition:opacity .4s ease}
+  .about-modal.open{opacity:1;visibility:visible}
+  .am-close{position:fixed;top:24px;right:6vw;z-index:3;background:rgba(10,10,11,.6);border:1px solid var(--line);color:var(--fg);width:50px;height:50px;border-radius:50%;font-size:24px;line-height:1;cursor:pointer;transition:.3s}
+  .am-close:hover{border-color:var(--accent);color:var(--accent);transform:rotate(90deg)}
+  .am-body{max-width:760px;margin:0 auto;padding:96px 28px 120px}
+  .am-body h2{font-size:clamp(28px,5vw,44px);font-weight:300;letter-spacing:-.02em;margin-bottom:30px;line-height:1.1}
+  .am-body h3{font-size:19px;font-weight:500;color:var(--accent);margin:38px 0 12px}
+  .am-body p{color:#c7c6c2;margin-bottom:16px;line-height:1.8}
+  .am-body ul{color:#c7c6c2;margin:0 0 16px 20px;line-height:1.7}
+  .am-body li{margin-bottom:6px}
 </style>
 </head>
 <body>
@@ -336,12 +348,14 @@
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-bg">
-    <img src="images/uploads/hero-bg.jpg" alt="Filmset mit Kamera, Schienen und Licht – Philip Neugebauer">
+    <video autoplay muted loop playsinline poster="images/uploads/hero-bg.jpg">
+      <source src="philip-hero.mp4" type="video/mp4">
+    </video>
   </div>
   <div class="wrap hero-inner">
     <span class="eyebrow">Director of Photography &amp; Colorist</span>
-    <h1 class="serif" data-i18n="hero_h1">Bilder, die<br><em>bleiben.</em></h1>
-    <p data-i18n="hero_p">Ich erzähle Geschichten in Licht und Bewegung — von intimen Portraits bis zu cinematischen Filmproduktionen.</p>
+    <h1 class="serif" data-i18n="hero_h1">Perfektionismus trifft<br><em>kreativen Wahnsinn.</em></h1>
+    <p data-i18n="hero_p">Ich erzähle Geschichten in Licht und Bewegung — von intimen Portraits bis hin zu großen Multicam-Filmproduktionen.</p>
   </div>
   <a href="#work" class="scroll-cue" aria-label="Zu Work scrollen">Scroll<i></i></a>
 </section>
@@ -359,31 +373,15 @@
   <div class="work-grid">
     <div class="tile c7 t-wide reveal">
       <div class="tile-media" data-px="30"><img loading="lazy" decoding="async" src="images/uploads/work-band-videos.jpg" alt="Band-Videodreh im Studio – Philip Neugebauer"></div>
-      <div class="cap"><small>Showreel</small><span data-i18n="cap_band">Band - Videos</span></div>
+      <div class="cap"><small data-i18n="cap_mv_s">Musik Videos</small><span data-i18n="cap_band">Agatha Is Dead! - Kind Regards</span></div>
     </div>
     <div class="tile c5 t-wide reveal">
       <div class="tile-media" data-px="30"><img loading="lazy" decoding="async" src="images/uploads/work-innotrans-2023.jpg" alt="InnoTrans 2023 Messegelände aus der Luft – Philip Neugebauer"></div>
-      <div class="cap"><small>Commercials</small><span>Innotrans 2023</span></div>
+      <div class="cap"><small data-i18n="cap_if_s">Imagefilm</small><span>Innotrans 2023</span></div>
     </div>
-    <div class="tile c4 t-tall reveal">
-      <div class="tile-media" data-px="30"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1503095396549-807759245b35?q=80&w=1974&auto=format&fit=crop" alt="Strasse in der Stadt"></div>
-      <div class="cap"><small>Reportage</small><span>Urban</span></div>
-    </div>
-    <div class="tile c4 t-tall reveal">
-      <div class="tile-media" data-px="30"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=1964&auto=format&fit=crop" alt="Portrait Frau"></div>
-      <div class="cap"><small>Editorial</small><span>Faces</span></div>
-    </div>
-    <div class="tile c4 t-tall reveal">
-      <div class="tile-media" data-px="30"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2074&auto=format&fit=crop" alt="Berge im Nebel"></div>
-      <div class="cap"><small data-i18n="cap_land_s">Landschaft</small><span data-i18n="cap_land_t">Horizonte</span></div>
-    </div>
-    <div class="tile c8 t-wide reveal">
-      <div class="tile-media" data-px="30"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2059&auto=format&fit=crop" alt="Kinosaal Licht"></div>
-      <div class="cap"><small data-i18n="cap_film_s">Filmproduktion</small><span data-i18n="cap_film_t">Kammerspiel</span></div>
-    </div>
-    <div class="tile c4 t-wide reveal">
-      <div class="tile-media" data-px="30"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2070&auto=format&fit=crop" alt="Nebliger Wald"></div>
-      <div class="cap"><small data-i18n="cap_doku_s">Doku</small><span data-i18n="cap_doku_t">Wald</span></div>
+    <div class="tile c12 t-wide reveal">
+      <div class="tile-media" data-px="30"><img loading="lazy" decoding="async" src="images/uploads/alltagsathleten.jpg" alt="Alltagsathleten Dokumentation – Philip Neugebauer"></div>
+      <div class="cap"><small data-i18n="cap_dok_s">Dokumentationen</small><span>Alltagsathleten</span></div>
     </div>
   </div>
   <a href="#ueber" class="section-cue" data-i18n="cue_about" aria-label="Weiter zu Über mich">Über mich<i></i></a>
@@ -404,34 +402,19 @@
     </div>
     <div class="about-text reveal">
       <h2 class="serif">Director of Photography<br>&amp; Colorist.</h2>
-      <p data-i18n="about_p1">Ich bin Philip Neugebauer, 29 Jahre jung und leidenschaftlicher Director of Photography und Colorist. Seit über 12 Jahren arbeite ich im Film- und Medienbereich und begleite Produktionen von der ersten Idee bis zum finalen Bild — in dieser Zeit durfte ich zahlreiche spannende Projekte für renommierte Marken realisieren.</p>
-      <p data-i18n="about_p2">Mein Schwerpunkt liegt auf hochwertigem Bilddesign, professionellem Color Grading und der technischen Umsetzung unterschiedlichster Videoformate. Dabei bringe ich eine hohe Flexibilität mit — sowohl im Studio als auch weltweit unterwegs.</p>
-      <p data-i18n="about_p3">Gerade in dynamischen Produktionen bewahre ich Ruhe und behalte den Überblick. Ich stelle mich schnell auf neue Situationen ein und finde auch in herausfordernden Momenten kreative, effiziente Lösungen, um jedes Projekt visuell auf den Punkt zu bringen.</p>
+      <p data-i18n="about_p1">Ich bin Philip Neugebauer, 30 Jahre alt, Director of Photography und Colorist aus Berlin. Seit über 13 Jahren begleite ich Produktionen von der ersten Idee bis zum finalen Frame — für Marken wie Porsche, Warner Music, Sony Classical und UEFA.</p>
+      <p data-i18n="about_p2">Von Kiel bis Hawaii, von Sansibar bis Palo Alto — ich gehe dahin, wo das Bild entsteht.</p>
+      <p data-i18n="about_p3">Was mich antreibt? Das Bild, das bleibt. Privat verbringe ich zu viel Zeit damit, Kameralinsen zu vergleichen, Filmemacher-Kommentare auf Blu-ray zu hören und Farbpaletten aus alten Kinoklassikern zu analysieren — kurz: ein echter Film- und Techniknerd. Genau das fließt in jede Produktion ein.</p>
+      <p data-i18n="about_p4"><strong>Mein Vorteil:</strong> Ich denke schon beim Dreh in der Post.</p>
+      <button class="about-more" id="aboutMore" data-i18n="about_more">Meine ganze Geschichte →</button>
       <div class="stats">
-        <div class="stat"><b>12+</b><small data-i18n="stat_years">Jahre Erfahrung</small></div>
+        <div class="stat"><b>13+</b><small data-i18n="stat_years">Jahre Erfahrung</small></div>
         <div class="stat"><b>DoP</b><small>&amp; Colorist</small></div>
         <div class="stat"><b data-i18n="stat_ww">Weltweit</b><small>Studio &amp; on location</small></div>
       </div>
     </div>
   </div>
 
-  <div class="tech reveal">
-    <span class="eyebrow" data-i18n="tech_eyebrow">Technisches Profil</span>
-    <div class="tech-grid">
-      <div class="tech-col">
-        <h4 data-i18n="tech_cam">Kameraerfahrung</h4>
-        <p>Arri · RED (eigenes RED Gemini 5K) · Blackmagic · Sony · Canon · Super8</p>
-      </div>
-      <div class="tech-col">
-        <h4>Color Grading Tools</h4>
-        <p>DaVinci Resolve 20 Studio · Premiere Pro · After Effects · Maxon Red Giant</p>
-      </div>
-      <div class="tech-col">
-        <h4>Key Skills</h4>
-        <p data-i18n="tech_skills">Film Print Emulationen (Super8 / 16mm) · Farbkorrektur · VFX Grading · Lookentwicklung</p>
-      </div>
-    </div>
-  </div>
   <a href="#leistungen" class="section-cue" data-i18n="cue_services" aria-label="Weiter zu Leistungen">Leistungen<i></i></a>
 
 </section>
@@ -448,32 +431,32 @@
   <div class="services reveal">
       <div class="svc">
         <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.2-1.8A1 1 0 0 1 9 4.7h6a1 1 0 0 1 .83.5L17 7h2.5A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.8" r="3.2"/></svg></span>
-        <h3 class="serif">Cinematography</h3>
-        <p data-i18n="svc1">Bildgestaltung für Film, Werbung und Corporate-Produktionen</p>
+        <h3 class="serif">Director of Photography</h3>
+        <p data-i18n="svc1">Bildgestaltung und Kameraführung für Film, Werbung und Markenproduktionen</p>
       </div>
       <div class="svc">
         <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.9-.9 1.9-1.9 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.1 0-.9.8-1.6 1.7-1.6H16a5 5 0 0 0 5-5c0-3.9-4-7.2-9-7.2z"/><circle cx="7.6" cy="11.2" r=".9"/><circle cx="10.4" cy="7.8" r=".9"/><circle cx="14" cy="7.6" r=".9"/><circle cx="16.6" cy="10.6" r=".9"/></svg></span>
-        <h3 class="serif">Color Grading</h3>
-        <p data-i18n="svc2">Professionelles Colorgrading für Film und Foto im Look deiner Marke</p>
+        <h3 class="serif" data-i18n="svc2h">Farbkorrektur / Color Grading</h3>
+        <p data-i18n="svc2">Professionelles Color Grading in DaVinci Resolve — ein eigener Look für jedes Projekt</p>
       </div>
       <div class="svc">
         <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 6.2S10 4.7 4.2 4.7V18c5.8 0 7.8 1.4 7.8 1.4S14 18 19.8 18V4.7C14 4.7 12 6.2 12 6.2z"/><path d="M12 6.2v13.2"/></svg></span>
-        <h3 class="serif">Editorial</h3>
-        <p data-i18n="svc3">Kreative Bildsprache für Magazine, Lookbooks und Kampagnen</p>
+        <h3 class="serif">Editing</h3>
+        <p data-i18n="svc3">Schnitt und Montage, die deine Geschichte auf den Punkt erzählen</p>
       </div>
       <div class="svc">
         <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="3.4"/><path d="M5.2 20c0-3.5 3-6 6.8-6s6.8 2.5 6.8 6"/></svg></span>
-        <h3 class="serif">Portrait & People</h3>
-        <p data-i18n="svc4">Authentische Charakterportraits für Personal Branding und mehr</p>
+        <h3 class="serif" data-i18n="svc4h">Full-Service-Produktionen</h3>
+        <p data-i18n="svc4">Von Konzept über Dreh bis Postproduktion — alles aus einer Hand</p>
       </div>
       <div class="svc">
         <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="5.2" width="16" height="15.3" rx="1.6"/><path d="M4 9.6h16M8 3.2v3.8M16 3.2v3.8"/></svg></span>
-        <h3 class="serif">Events & Reportage</h3>
-        <p data-i18n="svc5">Authentische Bildberichterstattung von Events und Projekten</p>
+        <h3 class="serif" data-i18n="svc5h">Event-, Highlight- &amp; Aftermovie</h3>
+        <p data-i18n="svc5">Dynamische Zusammenschnitte von Events, Konzerten und Projekten</p>
       </div>
       <div class="svc">
         <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9.3 18.2h5.4M10.3 21h3.4"/><path d="M12 3a6 6 0 0 0-3.8 10.6c.7.6 1 1.3 1 2.4h5.6c0-1.1.3-1.8 1-2.4A6 6 0 0 0 12 3z"/></svg></span>
-        <h3 class="serif" data-i18n="svc6h">Beratung & Konzept</h3>
+        <h3 class="serif" data-i18n="svc6h">Beratung &amp; Konzeptionierung</h3>
         <p data-i18n="svc6">Strategische Bildberatung und Visual Direction für dein Projekt</p>
       </div>
   </div>
@@ -485,7 +468,6 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <div>
-        <span class="eyebrow" data-i18n="proj_eyebrow">Fallstudien</span>
         <h2 class="serif" data-i18n="proj_h2">Projekte</h2>
       </div>
       <p data-i18n="proj_p">Ausgewählte Auftragsarbeiten und freie Serien — von der ersten Idee bis zum fertigen Schnitt.</p>
@@ -542,6 +524,11 @@
     <button id="g-close" class="g-close" aria-label="Galerie schließen">&times;</button>
   </div>
   <div class="gallery-grid" id="g-grid"></div>
+</div>
+
+<div id="aboutModal" class="about-modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="am-close" id="amClose" aria-label="Schließen">&times;</button>
+  <div class="am-body" id="amBody"></div>
 </div>
 
 <footer>
@@ -694,7 +681,7 @@
   })();
 </script>
 <script>
-  var T={de:{"nav_work": "Work", "nav_about": "Über mich", "nav_services": "Leistungen", "nav_projects": "Projekte", "nav_contact": "Kontakt", "hero_h1": "Bilder, die<br><em>bleiben.</em>", "hero_p": "Ich erzähle Geschichten in Licht und Bewegung — von intimen Portraits bis zu cinematischen Filmproduktionen.", "work_eyebrow": "Ausgewählte Arbeiten", "work_p": "Eine Auswahl aus Foto- und Filmprojekten der letzten Jahre — Portrait, Reportage, Landschaft und Bewegtbild.", "cap_band": "Band - Videos", "cap_land_s": "Landschaft", "cap_land_t": "Horizonte", "cap_film_s": "Filmproduktion", "cap_film_t": "Kammerspiel", "cap_doku_s": "Doku", "cap_doku_t": "Wald", "cue_about": "Über mich<i></i>", "about_eyebrow": "Persönlich", "about_h2": "Über mich", "about_p1": "Ich bin Philip Neugebauer, 29 Jahre jung und leidenschaftlicher Director of Photography und Colorist. Seit über 12 Jahren arbeite ich im Film- und Medienbereich und begleite Produktionen von der ersten Idee bis zum finalen Bild — in dieser Zeit durfte ich zahlreiche spannende Projekte für renommierte Marken realisieren.", "about_p2": "Mein Schwerpunkt liegt auf hochwertigem Bilddesign, professionellem Color Grading und der technischen Umsetzung unterschiedlichster Videoformate. Dabei bringe ich eine hohe Flexibilität mit — sowohl im Studio als auch weltweit unterwegs.", "about_p3": "Gerade in dynamischen Produktionen bewahre ich Ruhe und behalte den Überblick. Ich stelle mich schnell auf neue Situationen ein und finde auch in herausfordernden Momenten kreative, effiziente Lösungen, um jedes Projekt visuell auf den Punkt zu bringen.", "stat_years": "Jahre Erfahrung", "stat_ww": "Weltweit", "tech_eyebrow": "Technisches Profil", "tech_cam": "Kameraerfahrung", "tech_skills": "Film Print Emulationen (Super8 / 16mm) · Farbkorrektur · VFX Grading · Lookentwicklung", "cue_services": "Leistungen<i></i>", "svc_eyebrow": "Leistungen", "svc_h2": "Was ich biete", "svc_intro": "Von der ersten Bildidee bis zum finalen Grading — Gestaltung, Umsetzung und Beratung aus einer Hand.", "svc1": "Bildgestaltung für Film, Werbung und Corporate-Produktionen", "svc2": "Professionelles Colorgrading für Film und Foto im Look deiner Marke", "svc3": "Kreative Bildsprache für Magazine, Lookbooks und Kampagnen", "svc4": "Authentische Charakterportraits für Personal Branding und mehr", "svc5": "Authentische Bildberichterstattung von Events und Projekten", "svc6h": "Beratung & Konzept", "svc6": "Strategische Bildberatung und Visual Direction für dein Projekt", "cue_projects": "Projekte<i></i>", "proj_eyebrow": "Fallstudien", "proj_h2": "Projekte", "proj_p": "Ausgewählte Auftragsarbeiten und freie Serien — von der ersten Idee bis zum fertigen Schnitt.", "cue_contact": "Kontakt<i></i>", "contact_eyebrow": "Kontakt", "contact_big": "Lass uns etwas<br><a href=\"mailto:hallo@philip-neugebauer.com\">Schönes schaffen.</a>", "contact_p": "Erzähl mir von deinem Projekt — ob Portrait, Reportage oder Film. Ich melde mich innerhalb von 48&nbsp;Stunden.", "contact_email": "E-Mail", "contact_phone": "Telefon", "cue_top": "Nach oben<i></i>", "footer_legal": "<a href=\"impressum.html\">Impressum</a> · <a href=\"datenschutz.html\">Datenschutz</a>", "cookie_p": "Diese Website verwendet ausschließlich technisch notwendige Cookies, um ihre Funktion sicherzustellen. Details in der <a href=\"datenschutz.html\">Datenschutzerklärung</a>.", "cookie_btn": "Verstanden"},en:{"nav_work": "Work", "nav_about": "About", "nav_services": "Services", "nav_projects": "Projects", "nav_contact": "Contact", "hero_h1": "Images that<br><em>endure.</em>", "hero_p": "I tell stories in light and motion — from intimate portraits to cinematic film productions.", "work_eyebrow": "Selected Work", "work_p": "A selection of photo and film projects from recent years — portrait, reportage, landscape and motion.", "cap_band": "Band Videos", "cap_land_s": "Landscape", "cap_land_t": "Horizons", "cap_film_s": "Film Production", "cap_film_t": "Chamber Piece", "cap_doku_s": "Documentary", "cap_doku_t": "Forest", "cue_about": "About<i></i>", "about_eyebrow": "Personal", "about_h2": "About", "about_p1": "I'm Philip Neugebauer, 29 years young and a passionate Director of Photography and Colorist. For over 12 years I've worked in film and media, accompanying productions from the first idea to the final image — and in that time I've had the privilege of realizing many exciting projects for renowned brands.", "about_p2": "My focus is on high-quality visual design, professional color grading and the technical realization of a wide range of video formats. I bring a high degree of flexibility — both in the studio and on location worldwide.", "about_p3": "Especially in dynamic productions I stay calm and keep the overview. I adapt quickly to new situations and find creative, efficient solutions even in challenging moments — to bring every project visually to the point.", "stat_years": "Years of experience", "stat_ww": "Worldwide", "tech_eyebrow": "Technical Profile", "tech_cam": "Camera experience", "tech_skills": "Film print emulation (Super8 / 16mm) · Color correction · VFX grading · Look development", "cue_services": "Services<i></i>", "svc_eyebrow": "Services", "svc_h2": "What I offer", "svc_intro": "From the first visual idea to the final grade — design, execution and consulting from one source.", "svc1": "Visual design for film, advertising and corporate productions", "svc2": "Professional color grading for film and photo in your brand's look", "svc3": "Creative imagery for magazines, lookbooks and campaigns", "svc4": "Authentic character portraits for personal branding and more", "svc5": "Authentic visual coverage of events and projects", "svc6h": "Consulting & Concept", "svc6": "Strategic visual consulting and direction for your project", "cue_projects": "Projects<i></i>", "proj_eyebrow": "Case Studies", "proj_h2": "Projects", "proj_p": "Selected commissioned work and free series — from the first idea to the final cut.", "cue_contact": "Contact<i></i>", "contact_eyebrow": "Contact", "contact_big": "Let's create something<br><a href=\"mailto:hallo@philip-neugebauer.com\">beautiful.</a>", "contact_p": "Tell me about your project — portrait, reportage or film. I'll get back to you within 48&nbsp;hours.", "contact_email": "Email", "contact_phone": "Phone", "cue_top": "Back to top<i></i>", "footer_legal": "<a href=\"impressum.html\">Imprint</a> · <a href=\"datenschutz.html\">Privacy</a>", "cookie_p": "This website only uses technically necessary cookies to ensure its functionality. Details in the <a href=\"datenschutz.html\">privacy policy</a>.", "cookie_btn": "Got it"}};
+  var T={de:{"cap_mv_s": "Musik Videos", "cap_if_s": "Imagefilm", "cap_dok_s": "Dokumentationen", "about_p4": "<strong>Mein Vorteil:</strong> Ich denke schon beim Dreh in der Post.", "about_more": "Meine ganze Geschichte →", "svc2h": "Farbkorrektur / Color Grading", "svc4h": "Full-Service-Produktionen", "svc5h": "Event-, Highlight- &amp; Aftermovie", "nav_work": "Work", "nav_about": "Über mich", "nav_services": "Leistungen", "nav_projects": "Projekte", "nav_contact": "Kontakt", "hero_h1": "Perfektionismus trifft<br><em>kreativen Wahnsinn.</em>", "hero_p": "Ich erzähle Geschichten in Licht und Bewegung — von intimen Portraits bis hin zu großen Multicam-Filmproduktionen.", "work_eyebrow": "Ausgewählte Arbeiten", "work_p": "Eine Auswahl aus Foto- und Filmprojekten der letzten Jahre — Portrait, Reportage, Landschaft und Bewegtbild.", "cap_band": "Agatha Is Dead! - Kind Regards", "cap_land_s": "Landschaft", "cap_land_t": "Horizonte", "cap_film_s": "Filmproduktion", "cap_film_t": "Kammerspiel", "cap_doku_s": "Doku", "cap_doku_t": "Wald", "cue_about": "Über mich<i></i>", "about_eyebrow": "Persönlich", "about_h2": "Über mich", "about_p1": "Ich bin Philip Neugebauer, 30 Jahre alt, Director of Photography und Colorist aus Berlin. Seit über 13 Jahren begleite ich Produktionen von der ersten Idee bis zum finalen Frame — für Marken wie Porsche, Warner Music, Sony Classical und UEFA.", "about_p2": "Von Kiel bis Hawaii, von Sansibar bis Palo Alto — ich gehe dahin, wo das Bild entsteht.", "about_p3": "Was mich antreibt? Das Bild, das bleibt. Privat verbringe ich zu viel Zeit damit, Kameralinsen zu vergleichen, Filmemacher-Kommentare auf Blu-ray zu hören und Farbpaletten aus alten Kinoklassikern zu analysieren — kurz: ein echter Film- und Techniknerd. Genau das fließt in jede Produktion ein.", "stat_years": "Jahre Erfahrung", "stat_ww": "Weltweit", "tech_eyebrow": "Technisches Profil", "tech_cam": "Kameraerfahrung", "tech_skills": "Film Print Emulationen (Super8 / 16mm) · Farbkorrektur · VFX Grading · Lookentwicklung", "cue_services": "Leistungen<i></i>", "svc_eyebrow": "Leistungen", "svc_h2": "Was ich biete", "svc_intro": "Von der ersten Bildidee bis zum finalen Grading — Gestaltung, Umsetzung und Beratung aus einer Hand.", "svc1": "Bildgestaltung und Kameraführung für Film, Werbung und Markenproduktionen", "svc2": "Professionelles Color Grading in DaVinci Resolve — ein eigener Look für jedes Projekt", "svc3": "Schnitt und Montage, die deine Geschichte auf den Punkt erzählen", "svc4": "Von Konzept über Dreh bis Postproduktion — alles aus einer Hand", "svc5": "Dynamische Zusammenschnitte von Events, Konzerten und Projekten", "svc6h": "Beratung &amp; Konzeptionierung", "svc6": "Strategische Bildberatung und Visual Direction für dein Projekt", "cue_projects": "Projekte<i></i>", "proj_eyebrow": "Fallstudien", "proj_h2": "Projekte", "proj_p": "Ausgewählte Auftragsarbeiten und freie Serien — von der ersten Idee bis zum fertigen Schnitt.", "cue_contact": "Kontakt<i></i>", "contact_eyebrow": "Kontakt", "contact_big": "Lass uns etwas<br><a href=\"mailto:hallo@philip-neugebauer.com\">Schönes schaffen.</a>", "contact_p": "Erzähl mir von deinem Projekt — ob Portrait, Reportage oder Film. Ich melde mich innerhalb von 48&nbsp;Stunden.", "contact_email": "E-Mail", "contact_phone": "Telefon", "cue_top": "Nach oben<i></i>", "footer_legal": "<a href=\"impressum.html\">Impressum</a> · <a href=\"datenschutz.html\">Datenschutz</a>", "cookie_p": "Diese Website verwendet ausschließlich technisch notwendige Cookies, um ihre Funktion sicherzustellen. Details in der <a href=\"datenschutz.html\">Datenschutzerklärung</a>.", "cookie_btn": "Verstanden"},en:{"cap_mv_s": "Music Videos", "cap_if_s": "Image Film", "cap_dok_s": "Documentaries", "about_p4": "<strong>My edge:</strong> I'm already thinking about post while we're shooting.", "about_more": "My full story →", "svc2h": "Color Correction / Grading", "svc4h": "Full-Service Productions", "svc5h": "Event, Highlight &amp; Aftermovie", "nav_work": "Work", "nav_about": "About", "nav_services": "Services", "nav_projects": "Projects", "nav_contact": "Contact", "hero_h1": "Perfectionism meets<br><em>creative madness.</em>", "hero_p": "I tell stories in light and motion — from intimate portraits all the way to large multicam film productions.", "work_eyebrow": "Selected Work", "work_p": "A selection of photo and film projects from recent years — portrait, reportage, landscape and motion.", "cap_band": "Agatha Is Dead! - Kind Regards", "cap_land_s": "Landscape", "cap_land_t": "Horizons", "cap_film_s": "Film Production", "cap_film_t": "Chamber Piece", "cap_doku_s": "Documentary", "cap_doku_t": "Forest", "cue_about": "About<i></i>", "about_eyebrow": "Personal", "about_h2": "About", "about_p1": "I'm Philip Neugebauer, 30 years old, a Director of Photography and Colorist based in Berlin. For over 13 years I've accompanied productions from the first idea to the final frame — for brands like Porsche, Warner Music, Sony Classical and UEFA.", "about_p2": "From Kiel to Hawaii, from Zanzibar to Palo Alto — I go wherever the image happens.", "about_p3": "What drives me? The image that endures. Off set, I spend too much time comparing camera lenses, listening to filmmaker commentaries on Blu-ray and analyzing color palettes from old cinema classics — in short: a true film and tech nerd. And exactly that flows into every production.", "stat_years": "Years of experience", "stat_ww": "Worldwide", "tech_eyebrow": "Technical Profile", "tech_cam": "Camera experience", "tech_skills": "Film print emulation (Super8 / 16mm) · Color correction · VFX grading · Look development", "cue_services": "Services<i></i>", "svc_eyebrow": "Services", "svc_h2": "What I offer", "svc_intro": "From the first visual idea to the final grade — design, execution and consulting from one source.", "svc1": "Visual design and camera work for film, advertising and brand productions", "svc2": "Professional color grading in DaVinci Resolve — a distinct look for every project", "svc3": "Editing that tells your story right to the point", "svc4": "From concept to shoot to post — everything from one source", "svc5": "Dynamic edits of events, concerts and projects", "svc6h": "Consulting & Concept", "svc6": "Strategic visual consulting and direction for your project", "cue_projects": "Projects<i></i>", "proj_eyebrow": "Case Studies", "proj_h2": "Projects", "proj_p": "Selected commissioned work and free series — from the first idea to the final cut.", "cue_contact": "Contact<i></i>", "contact_eyebrow": "Contact", "contact_big": "Let's create something<br><a href=\"mailto:hallo@philip-neugebauer.com\">beautiful.</a>", "contact_p": "Tell me about your project — portrait, reportage or film. I'll get back to you within 48&nbsp;hours.", "contact_email": "Email", "contact_phone": "Phone", "cue_top": "Back to top<i></i>", "footer_legal": "<a href=\"impressum.html\">Imprint</a> · <a href=\"datenschutz.html\">Privacy</a>", "cookie_p": "This website only uses technically necessary cookies to ensure its functionality. Details in the <a href=\"datenschutz.html\">privacy policy</a>.", "cookie_btn": "Got it"}};
   var META_EN={"Sport-Highlightfilm · Color Grading": "Sports highlight film · Color Grading", "Markenfilm · Color Grading": "Brand film · Color Grading", "Musikvideo · DoP & Color Grading": "Music video · DoP & Color Grading", "Messefilm · Color Grading": "Trade fair film · Color Grading", "Dokumentation · DoP": "Documentary · DoP", "Markenfilm · DoP & Color Grading": "Brand film · DoP & Color Grading"};
   var CUR_LANG='de';
   function tMeta(m){ return (CUR_LANG==='en' && META_EN[m]) ? META_EN[m] : (m||''); }
@@ -708,6 +695,8 @@
     document.querySelectorAll('.lang-toggle span[data-l]').forEach(function(sp){
       sp.classList.toggle('active', sp.getAttribute('data-l')===l);
     });
+    var _amb=document.getElementById('amBody'),_amd=document.getElementById('aboutModal');
+    if(_amb&&_amd&&_amd.classList.contains('open')&&typeof BIO!=='undefined')_amb.innerHTML=BIO[l];
     try{localStorage.setItem('lang-philip',l)}catch(e){}
     if(typeof PROJEKTE!=='undefined' && PROJEKTE && PROJEKTE.length) renderProjekte({projekte:PROJEKTE});
   }
@@ -716,6 +705,19 @@
     applyLang(saved);
     var t=document.getElementById('langToggle');
     if(t)t.addEventListener('click',function(){ applyLang(CUR_LANG==='de'?'en':'de'); });
+  })();
+</script>
+<script>
+  var BIO={de:"<h2>Philip Neugebauer — Director of Photography &amp; Colorist</h2>\n<p>Ich bin Philip, 30 Jahre alt, geboren und aufgewachsen in Berlin. Was als jugendliche Faszination für Kameras und Filme begann, ist heute mein Beruf, meine Leidenschaft und — seien wir ehrlich — meine Obsession.</p>\n<h3>Wie alles anfing</h3>\n<p>Schon 2013 stand ich das erste Mal professionell hinter einer Kamera — als Praktikant bei Yagaloo Media Production, mitten in echten Bild- und Tonproduktionen. Der Funke sprang sofort über. Von da an war klar: Das ist mein Weg.</p>\n<p>2015 arbeitete ich als Studioassistent bei DaCapo GmbH und durfte Technik für Produktionen aufbauen. Darunter das Champions-League-Finale und die Berlinale. Große Bühnen, große Kameras, großes Lernen.</p>\n<h3>Ausbildung &amp; Weiterbildung</h3>\n<p>Von 2015 bis 2018 absolvierte ich meine Ausbildung zum Medientechnischen Assistenten bei der Aucoteam GmbH — technisches Fundament, das bis heute trägt. Parallel dazu zog es mich zweimal nach Barcelona, wo ich im Rahmen von Erasmus+ bei Blua Producers in internationalen Produktionsumfeldern arbeitete: Kamera, Schnitt, internationale Teams, andere Arbeitsweisen. Das hat meinen Blick enorm erweitert.</p>\n<p>2019 folgte die Weiterbildung zum Film- und TV-Cutter an der Schnittakademie Berlin — weil ich nicht nur wissen wollte, wie man dreht, sondern wie man eine Geschichte im Schnitt wirklich zum Leben erweckt.</p>\n<p>Meine technische Basis umfasst heute:</p>\n<ul>\n<li>Medientechnischer Assistent — Aucoteam GmbH (2015–2018)</li>\n<li>Auslandspraktikum Barcelona, Blua Producers — Erasmus+ (2017, 2018–2019)</li>\n<li>Film- und TV-Cutter — Schnittakademie Berlin (2019)</li>\n</ul>\n<p>Ab 2020 begann für mich eine neue Ära. Zunächst als Video Producer bei We.Conect Global Leaders verantwortlich für Event-Aftermovies und Online-Content, dann — ab September 2020 — als festes Mitglied der Titanfilm Produktionsgesellschaft mbH, wo ich über fünf Jahre lang als Director of Photography und Colorist arbeitete und teils die Postproduktion mitgemanaged habe.</p>\n<p>In dieser Zeit entstanden Projekte, die mich durch die ganze Welt geführt haben: von der UEFA Euro 2024 am Brandenburger Tor über Aldiana-Clubfilme in Sansibar, Tunesien und Österreich bis zu Interviewserien für Walden Catalyst in Hawaii, Tel Aviv und San Francisco. Dazu Musikvideos für Warner Music, Konzertfilme für Sony Classical, Imagefilme für Porsche, Hugo Boss und Vodafone — und noch vieles mehr.</p>\n<p>Nebenbei habe ich vier Auszubildende in den Bereichen Bild, Licht, Ton, Editing und Colorgrading betreut. Wissen weiterzugeben ist für mich genauso wichtig wie es zu sammeln.</p>\n<h3>Der Nerd hinter der Kamera</h3>\n<p>Was die meisten nicht sehen: Wenn ich nicht drehe oder grade, beschäftige ich mich trotzdem mit Film. Ich vergleiche Kameralinsen, schaue Filminterviews, analysiere die Bildgestaltung alter und neuer Filme und teste neue Grading-Workflows in DaVinci Resolve — während andere schlafen. Und ja: Bevor ich einen neuen Film anschaue, muss ich zuerst die Technical Specs kennen. Welche Kamera, welches Format, welche Optiken — erst dann kann ich ihn wirklich genießen. Filmtechnik ist für mich kein Werkzeug, sondern ein Universum, das ich nie aufhöre zu erkunden.</p>\n<h3>Heute</h3>\n<p>Ich arbeite freiberuflich als Director of Photography und Colorist — mit über 13 Jahren Erfahrung und einer eigenen RED Gemini 5K im Gepäck. Mein Anspruch: Jedes Projekt bekommt seinen eigenen Look. Kein Template. Keinen Kompromiss.</p>\n<p>Genauso wichtig wie das Bild ist mir der Mensch dahinter. Ein respektvoller, ruhiger Umgang am Set liegt mir sehr am Herzen — ich glaube, dass die beste Arbeit dort entsteht, wo sich alle wohlfühlen. Einen Dreh so entspannt und harmonisch wie möglich zu gestalten ist für mich keine Selbstverständlichkeit, sondern eine Haltung.</p>\n<p>Von Kiel bis Hawaii war ich für den perfekten Shot unterwegs. Und ich bin noch lange nicht fertig.</p>",en:"<h2>Philip Neugebauer — Director of Photography &amp; Colorist</h2>\n<p>I'm Philip, 30 years old, born and raised in Berlin. What began as a teenage fascination with cameras and films is today my profession, my passion and — let's be honest — my obsession.</p>\n<h3>How it all started</h3>\n<p>Back in 2013 I stood behind a camera professionally for the first time — as an intern at Yagaloo Media Production, right in the middle of real picture and sound productions. The spark caught immediately. From then on it was clear: this is my path.</p>\n<p>In 2015 I worked as a studio assistant at DaCapo GmbH, setting up equipment for productions — among them the Champions League final and the Berlinale. Big stages, big cameras, big learning.</p>\n<h3>Education &amp; training</h3>\n<p>From 2015 to 2018 I completed my training as a Media Technology Assistant at Aucoteam GmbH — a technical foundation that still carries me today. In parallel I was drawn to Barcelona twice, where I worked through Erasmus+ at Blua Producers in international production environments: camera, editing, international teams, different ways of working. It broadened my perspective enormously.</p>\n<p>In 2019 I trained as a Film and TV Editor at Schnittakademie Berlin — because I didn't just want to know how to shoot, but how to truly bring a story to life in the edit.</p>\n<p>My technical foundation today includes:</p>\n<ul>\n<li>Media Technology Assistant — Aucoteam GmbH (2015–2018)</li>\n<li>Internship abroad in Barcelona, Blua Producers — Erasmus+ (2017, 2018–2019)</li>\n<li>Film and TV Editor — Schnittakademie Berlin (2019)</li>\n</ul>\n<p>From 2020 a new era began for me. First as a Video Producer at We.Conect Global Leaders, responsible for event aftermovies and online content, then — from September 2020 — as a permanent member of Titanfilm Produktionsgesellschaft mbH, where I worked for over five years as Director of Photography and Colorist and partly co-managed post-production.</p>\n<p>During this time I created projects that took me all around the world: from the UEFA Euro 2024 at the Brandenburg Gate, to Aldiana club films in Zanzibar, Tunisia and Austria, to interview series for Walden Catalyst in Hawaii, Tel Aviv and San Francisco. Plus music videos for Warner Music, concert films for Sony Classical, image films for Porsche, Hugo Boss and Vodafone — and much more.</p>\n<p>Alongside that, I mentored four apprentices in picture, lighting, sound, editing and color grading. Passing on knowledge means as much to me as gathering it.</p>\n<h3>The nerd behind the camera</h3>\n<p>What most people don't see: when I'm not shooting or grading, I'm still busy with film. I compare camera lenses, watch filmmaker interviews, analyze the cinematography of old and new films and test new grading workflows in DaVinci Resolve — while others sleep. And yes: before I watch a new film, I have to know its technical specs first. Which camera, which format, which lenses — only then can I really enjoy it. Film technology isn't a tool to me, it's a universe I never stop exploring.</p>\n<h3>Today</h3>\n<p>I work freelance as a Director of Photography and Colorist — with over 13 years of experience and my own RED Gemini 5K in my luggage. My standard: every project gets its own look. No template. No compromise.</p>\n<p>Just as important as the image is the person behind it. A respectful, calm atmosphere on set matters deeply to me — I believe the best work happens where everyone feels comfortable. Making a shoot as relaxed and harmonious as possible is, to me, not a given but an attitude.</p>\n<p>From Kiel to Hawaii I've travelled for the perfect shot. And I'm far from done.</p>"};
+  (function(){
+    var modal=document.getElementById('aboutModal'),body=document.getElementById('amBody');
+    var openBtn=document.getElementById('aboutMore'),closeBtn=document.getElementById('amClose');
+    function lang(){ return (typeof CUR_LANG!=='undefined')?CUR_LANG:'de'; }
+    function open(){ body.innerHTML=BIO[lang()]; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); modal.scrollTop=0; document.body.style.overflow='hidden'; }
+    function close(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+    if(openBtn)openBtn.addEventListener('click',open);
+    if(closeBtn)closeBtn.addEventListener('click',close);
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape')close(); });
   })();
 </script>
 </body>
